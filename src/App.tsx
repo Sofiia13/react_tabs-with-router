@@ -4,7 +4,7 @@ import './App.scss';
 import { Tabs } from './components/Tabs';
 import { NotFound } from './components/NotFound';
 import { Home } from './components/Home';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
 
 const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
@@ -45,6 +45,7 @@ export const App = () => (
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="tabs">
             <Route index element={<Tabs tabs={tabs} />} />
             <Route path=":tabId" element={<Tabs tabs={tabs} />} />
