@@ -9,7 +9,7 @@ type Props = {
 
 export const Tabs: React.FC<Props> = ({ tabs }) => {
   const { tabId } = useParams();
-  const selectedTab = tabs.find(tab => tab.id === tabId) || null;
+  const selectedTab = tabs.find(tab => tab.id === tabId) || tabs[0];
 
   return (
     <>
